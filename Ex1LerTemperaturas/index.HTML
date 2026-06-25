@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperaturas</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.CSS">
+</head>
+
+<body >
+    <div class="d-flex flex-column align-items-center justify-content-center vh-100 position-relative w-100">
+        <div class="d-flex flex-column align-items-center screen-lg-scale">
+            <button class="btn btn-outline-danger bg-dark position-relative 
+                border-half-y-rounded-2" id="btnLimparRegistros" disabled> Limpar Registros </button>
+
+            <div class="w-fit d-flex flex-column justify-content-center align-items-center 
+                g-20 bg-dark-gray p-4 rounded-4 shadow" id="inputBox">
+                <input type="number" id="inputTemperatura" placeholder="Temperatura (°C)"
+                    class="form-control focus-ring-dark mb-5">
+                <button class="btn btn-outline-primary bg-dark" id="btnConfirmar"> Confirmar </button>
+                <button class="btn btn-outline-danger bg-dark" id="btnRelatorio" disabled> Relatório</button>
+            </div>
+        </div> 
+        <div id="sucessoAlert" class="alert alert-dark d-none position-absolute fs-3 rounded-3" role="alert"
+            style="border-color: #8bc3ff; background-color: #313438; color: #cae4ff;">
+            <strong> Sucesso! </strong> Temperatura registrada com sucesso!
+        </div>
+        <div id="deletarRegistroAlert" class="alert alert-dark d-none position-absolute fs-3 rounded-3" role="alert"
+            style="border-color: #8bc3ff; background-color: #313438; color: #cae4ff;">
+            <strong> Sucesso! </strong> Registros deletados com sucesso!
+        </div>
+        <div id="quantidadeRegistrosAlert" class="alert alert-dark d-none position-absolute fs-3 rounded-3" role="alert"
+            style="border-color: #8bc3ff; background-color: #313438; color: #cae4ff;"></div>
+    </div>
+    <script src="index.JS"></script> <!-- Lógica do site -->
+    <script src="js/bootstrap.bundle.min.js"></script> <!-- Componente do BOOTSTRAP -->
+</body>
+
+</html>
