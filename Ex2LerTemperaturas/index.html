@@ -15,8 +15,8 @@
         
         <h1 class="font-family-weghorst display-4 shadow-lg rounded-pill px-3 mb-5" 
             style="backdrop-filter:blur(5px); filter: brightness(1.2);"> — Área de Cadastro — </h1>
-        <div class="d-flex flex-column align-items-center justify-content-center bg-dark p-5 
-            g-20px rounded-5 shadow-lg position-relative font-family-scope-one border-color-yellow">
+        <div class="d-flex flex-column align-items-center justify-content-center p-5 
+            g-20px rounded-5 shadow position-relative bg-dark-gray border-color-yellow">
 
             <input type="text"   class="form-control fs-2 rounded-4 border-color-yellow"      
                 id="input-nome-aluno"          
@@ -29,11 +29,17 @@
                 placeholder="2° Nota do(a) aluno(a)">
             
             <button class="btn btn-outline-warning fs-2 font-family-weghorst 
-                rounded-4 px-5 bg-dark-gray"> Confirmar </button>
+                rounded-4 px-5 bg-dark-gray" id="btn-confirmar"> Confirmar </button>
+            
+            <button class="btn btn-outline-danger fs-2 font-family-weghorst 
+                rounded-4 px-5 bg-dark-gray" id="btn-ir-para-relatorio" disabled> Ir para Relatório </button>
+            
+           
         </div>
     </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
