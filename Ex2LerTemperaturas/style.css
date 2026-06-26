@@ -1,0 +1,58 @@
+body {
+    background: linear-gradient(
+        -45deg,
+        #d72638,
+        #ff5f6d,
+        #ff8c42,
+        #ffbd61,
+        #ff7a3c,
+        #e94c4c
+    );
+    background-size: 600% 600%;
+    animation: animBackground 8s linear infinite;
+}
+
+@font-face { font-family: 'Happy Chunk';   src: url('Fonts/happy_chunk/HappyChunk.ttf')      format('truetype'); }
+@font-face { font-family: 'Magics Flavor'; src: url('Fonts/magics_flavor/Magics\ Flavor.ttf')format('truetype'); }
+@font-face { font-family: 'WegHorst';      src: url('Fonts/weghorst/Weghorst.otf')           format('truetype'); }
+@font-face { font-family: 'Scope One';     src: url('Fonts/Scope_One/ScopeOne-Regular.ttf')  format('truetype'); }
+
+/* Classes pra fontes */
+.font-family-happy-chunk   { font-family: 'Happy Chunk'; }
+.font-family-magics-flavor { font-family: 'Magics Flavor'; }
+.font-family-weghorst      { font-family: 'WegHorst'; }
+.font-family-scope-one     { font-family: 'Scope One'; }
+/*==========================*/
+
+/* Classes utilitárias */
+.g-20px { gap: 20px; }
+.w-fit  { width: fit-content; }
+.border-color-orange { border:#ffa978 2px solid; }
+.border-color-yellow { border:#ffa600 2px solid; }
+.border-color-blue   { border:#78b3ff 2px solid; }
+.border-color-red    { border:#ff2f2f 2px solid; }
+.form-control        { transition: all 0.4s ease-in-out !important; }
+.btn-outline-warning { transition: all 0.4s ease !important; }
+.bg-dark-gray { background-color: #222222; }
+/*==========================*/
+
+/* Eventos */
+.form-control:focus { box-shadow: 0px 0px 10px 5px #ffc14f; outline: none; border-color: #ffedcb; }
+.form-control:hover { box-shadow: 0px 0px 15px 2px #ffd88f;  outline: none; border-color: #ffedcb; }
+.btn-outline-warning:hover { 
+    border:#fffffe 1px solid; 
+    color: #2b2b2b; 
+    background-color: #ffe9c0; 
+    box-shadow: 0px 0px 10px 5px #ffbb3d;
+ }
+/*==========================*/
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+/* Animações (keyframes) */
+@keyframes animBackground{
+    0%  { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100%{ background-position: 0% 50%; }
+}
+/*==========================*/
