@@ -1,14 +1,18 @@
-const dadosSalvos                    = localStorage.getItem('cadastroAlunos'); 
-const relatoriosAlunos               = document.querySelector("#relatorios-alunos");
-const relatoriosAlunosAcimaMedia     = document.querySelector('#relatorios-alunos-acima-media');
-const relatoriosQtdeAlunosAcimaMedia = document.querySelector('#relatorios-qtde-alunos-acima-media');
-let totalAlunosAcimaMedia            = 0;
+const dadosSalvos                     = localStorage.getItem('cadastroAlunos'); 
+const relatoriosAlunos                = document.querySelector("#relatorios-alunos");
+const relatoriosAlunosAcimaMedia      = document.querySelector('#relatorios-alunos-acima-media');
+const relatoriosAlunosAbaixoMedia     = document.querySelector('#relatorios-alunos-abaixo-media');
+const relatoriosQtdeAlunosAcimaMedia  = document.querySelector('#relatorios-qtde-alunos-acima-media');
+const relatoriosQtdeAlunosAbaixoMedia = document.querySelector('#relatorios-qtde-alunos-abaixo-media')
+let totalAlunosAcimaMedia             = 0;
+let totalAlunosAbaixoMedia            = 0;
 
 if (relatoriosAlunos) {
     relatoriosAlunos.innerHTML = '';
     relatoriosAlunos.classList.add('d-flex', 'flex-wrap', 'gap-3');
     
     if (relatoriosAlunosAcimaMedia) relatoriosAlunosAcimaMedia.innerHTML = '';
+    if (relatoriosAlunosAbaixoMedia) relatoriosAlunosAbaixoMedia.innerHTML = '';
 
     if (dadosSalvos) {  
         const alunosArray = JSON.parse(dadosSalvos);
@@ -35,27 +39,45 @@ if (relatoriosAlunos) {
             relatoriosAlunos.appendChild(cardDadoAluno);
 
             if (Number(media) > 7) {
+                corSituacao = 'text-light-green'
                 totalAlunosAcimaMedia++;
             
-                const cardAlunosAcimaDaMedia = document.createElement('div');
-            
-                cardAlunosAcimaDaMedia.className = 'd-flex flex-column shadow-lg text-white bf-filter-5px bf-brightness-1 rounded-4 p-4 font-family-oswald overflow-auto w-fit';
+                const cardAlunosAcimaDaMedia  = document.createElement('div');
+                
+                cardAlunosAcimaDaMedia.className  = 'd-flex flex-column green-glow border-color-white text-white bf-filter-5px bf-brightness-3 rounded-4 p-4 font-family-oswald overflow-auto w-fit';
                 cardAlunosAcimaDaMedia.innerHTML = `
                     <strong>${nome}</strong>
                     <span class='${corSituacao}'>Média: ${Number(media).toFixed(1)} </span>`;
             
                 if (relatoriosAlunosAcimaMedia)
                     relatoriosAlunosAcimaMedia.appendChild(cardAlunosAcimaDaMedia);                                    
+            
+            } else {
+                corSituacao = 'text-light-red';
+                totalAlunosAbaixoMedia++;
+                
+                const cardAlunosAbaixoDaMedia = document.createElement('div');
+                
+                cardAlunosAbaixoDaMedia.className = 'd-flex flex-column red-glow border-color-white text-white bf-filter-5px bf-brightness-3 rounded-4 p-4 font-family-oswald overflow-auto w-fit';
+                cardAlunosAbaixoDaMedia.innerHTML = `
+                    <strong>${nome}</strong>
+                    <span class='${corSituacao}'>Média: ${Number(media).toFixed(1)} </span>`;
+
+                if (relatoriosAlunosAbaixoMedia) 
+                    relatoriosAlunosAbaixoMedia.appendChild(cardAlunosAbaixoDaMedia);      
             }
         });
 
-        if (relatoriosQtdeAlunosAcimaMedia) 
-                relatoriosQtdeAlunosAcimaMedia.innerHTML = `<h1>${totalAlunosAcimaMedia} alunos</h1>`;
+        if (relatoriosQtdeAlunosAcimaMedia) relatoriosQtdeAlunosAcimaMedia.innerHTML = `
+            <h1>${totalAlunosAcimaMedia} alunos</h1>`;
+            
+        if (relatoriosQtdeAlunosAbaixoMedia) relatoriosQtdeAlunosAbaixoMedia.innerHTML = `
+            <h1>${totalAlunosAbaixoMedia} alunos</h1>`;
         
     } else {
         relatoriosAlunos.innerHTML = '<div class="ms-2 text-white">Nenhum aluno cadastrado ainda.</div>';
-        if (relatoriosQtdeAlunosAcimaMedia) 
-            relatoriosQtdeAlunosAcimaMedia.innerHTML = '<h3>0 alunos</h3>';
+        if (relatoriosQtdeAlunosAcimaMedia)  relatoriosQtdeAlunosAcimaMedia.innerHTML = `<h3>0 alunos</h3>`; 
+        if (relatoriosQtdeAlunosAbaixoMedia) relatoriosQtdeAlunosAbaixoMedia.innerHTML = `<h3>0 alunos</h3>`; 
     }
 }
 

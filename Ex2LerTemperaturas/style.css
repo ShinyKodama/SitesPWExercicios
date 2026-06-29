@@ -10,7 +10,10 @@ body {
     );
     background-size: 600% 600%;
     animation: animBackground 8s linear infinite !important;
+    scroll-behavior: smooth;
 }
+
+
 
 @font-face { font-family: 'Happy Chunk';   src: url('Fonts/happy_chunk/HappyChunk.ttf')             format('truetype'); }
 @font-face { font-family: 'Magics Flavor'; src: url('Fonts/magics_flavor/Magics\ Flavor.ttf')       format('truetype'); }
@@ -32,6 +35,20 @@ body {
 .g-20px { gap: 20px; }
 .w-fit  { width: fit-content; }
 
+.m-10   { margin: 10rem; }
+.m-20   { margin: 20rem; }
+.ms-10  { margin: 0 0 0 10rem; }
+.ms-20  { margin: 0 0 0 20rem; }
+.mx-10  { margin: 0 10rem 0 10rem; }
+.mx-20  { margin: 0 20rem 0 20rem; }
+.mb-10  { margin: 0 0 10rem 0; }
+.mb-20  { margin: 0 0 20rem 0; }
+.mt-10  { margin: 10rem 0 0 0; }
+.mt-20  { margin: 20rem 0 0 0; }
+.me-10  { margin: 0 10rem 0 0; }
+.me-20  { margin: 0 20rem 0 0; }
+.my-20  { margin: 20rem 0 20rem 0; }
+.my-10  { margin: 10rem 0 10rem 0; }
 .border-color-orange { border:#ffa978 2px solid; }
 .border-color-yellow { border:#ffa600 2px solid; }
 .border-color-blue   { border:#78b3ff 2px solid; }
@@ -41,13 +58,20 @@ body {
 .btn                 { transition: all 0.3s ease !important; }
 .bg-dark-gray        { background-color: #222222; }
 .bg-dark-blue        { background-color: #1a2e4b; }
+.bg-dark-green       { background-color: #234424; }
+.bg-dark-red         { background-color: #442323; }
 .shadow              { box-shadow: 0 0 1rem 0.02rem rgb(34, 34, 34, 0.8) !important; }
+.red-glow            { box-shadow: 0 0 1rem 0.02rem rgba(255, 84, 84, 0.8); }
+.green-glow          { box-shadow: 0 0 1rem 0.02rem rgba(84, 255, 84, 0.8); }
+.white-glow          { box-shadow: 0 0 1rem 0.02rem rgba(255, 255, 255, 0.8);}
 .bf-blur-5px         { backdrop-filter: 5px; }
 .bf-brightness-1     { backdrop-filter: brightness(1.2); }
 .bf-brightness-2     { backdrop-filter: brightness(0.9); }
 .bf-brightness-3     { backdrop-filter: brightness(0.5); }
 .text-light-blue     { color: #cae4ff; }
-.text-dark-blue      { color: #377dff}
+.text-light-green    { color: #9fffab; }
+.text-light-red      { color: #ffa0a0 }
+.text-dark-blue      { color: #377dff; }
 /*==========================*/
 
 /* Eventos */
@@ -73,5 +97,14 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-app
     0%   { background-position: 0% 50%; }
     50%  { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+@keyframes darkeningBackground {
+    0%   { background-color:rgba(0, 0, 0, 0.2); }
+    45%  { background-color:rgba(0, 136, 18, 0.85); }
+    50%  { background-color:rgba(0, 136, 18, 0.90); }
+    55%  { background-color:rgba(0, 136, 18, 0.95); }
+    90%  { background-color:rgb(194, 0, 0, 0.85); }
+    95%  { background-color:rgb(194, 0, 0, 0.90); }
+    100% { background-color:rgba(194, 0, 0, 0.95); } 
 }
 /*==========================*/

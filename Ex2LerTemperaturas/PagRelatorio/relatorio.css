@@ -9,6 +9,21 @@ body {
         #2b95db,
         #4c9de9
     );
+    position: relative !important;
     background-size: 600% 600%;
     animation: animBackground 15s linear infinite !important;
+    scroll-behavior: smooth;
+}
+
+body::before {
+    content: "";
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; 
+    pointer-events: none; 
+    animation: darkeningBackground linear forwards;
+    animation-timeline: scroll();
 }
