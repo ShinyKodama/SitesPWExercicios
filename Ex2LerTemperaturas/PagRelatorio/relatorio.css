@@ -11,8 +11,8 @@ body {
     );
     position: relative !important;
     background-size: 600% 600%;
-    animation: animBackground 15s linear infinite !important;
-    scroll-behavior: smooth;
+    animation: animBackground 5s linear infinite !important;
+    scroll-behavior: auto;
 }
 
 body::before {
@@ -27,3 +27,4 @@ body::before {
     animation: darkeningBackground linear forwards;
     animation-timeline: scroll();
 }
+

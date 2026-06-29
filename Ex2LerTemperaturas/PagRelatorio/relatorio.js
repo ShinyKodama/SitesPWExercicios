@@ -1,11 +1,20 @@
-const dadosSalvos                     = localStorage.getItem('cadastroAlunos'); 
+const dadosSalvos = localStorage.getItem('cadastroAlunos'); 
+
 const relatoriosAlunos                = document.querySelector("#relatorios-alunos");
 const relatoriosAlunosAcimaMedia      = document.querySelector('#relatorios-alunos-acima-media');
 const relatoriosAlunosAbaixoMedia     = document.querySelector('#relatorios-alunos-abaixo-media');
+const relatoriosAlunosDentroMedia     = document.querySelector('#relatorios-alunos-dentro-media');
+
 const relatoriosQtdeAlunosAcimaMedia  = document.querySelector('#relatorios-qtde-alunos-acima-media');
-const relatoriosQtdeAlunosAbaixoMedia = document.querySelector('#relatorios-qtde-alunos-abaixo-media')
-let totalAlunosAcimaMedia             = 0;
-let totalAlunosAbaixoMedia            = 0;
+const relatoriosQtdeAlunosAbaixoMedia = document.querySelector('#relatorios-qtde-alunos-abaixo-media');
+const relatorioQtdeAlunosDentroMedia  = document.querySelector('#relatorios-qtde-alunos-dentro-media');
+
+const maxAlunos = 5;
+
+let totalAlunosAcimaMedia = 0;
+let totalAlunosAbaixoMedia = 0;
+let totalAlunosDentroMedia = 0;
+
 
 if (relatoriosAlunos) {
     relatoriosAlunos.innerHTML = '';
@@ -13,6 +22,7 @@ if (relatoriosAlunos) {
     
     if (relatoriosAlunosAcimaMedia) relatoriosAlunosAcimaMedia.innerHTML = '';
     if (relatoriosAlunosAbaixoMedia) relatoriosAlunosAbaixoMedia.innerHTML = '';
+    if (relatoriosAlunosDentroMedia) relatoriosAlunosDentroMedia.innerHTML = '';
 
     if (dadosSalvos) {  
         const alunosArray = JSON.parse(dadosSalvos);
@@ -38,10 +48,13 @@ if (relatoriosAlunos) {
             
             relatoriosAlunos.appendChild(cardDadoAluno);
 
-            if (Number(media) > 7) {
+            if (Number(media) > 6) {
+                const textoPorcentagem_AM = document.querySelector('#relatorios-porcentagem-alunos-AM');
+                
                 corSituacao = 'text-light-green'
                 totalAlunosAcimaMedia++;
-            
+                let porcentagemAlunosAcimaMedia = (totalAlunosAcimaMedia / maxAlunos) * 100;
+                
                 const cardAlunosAcimaDaMedia  = document.createElement('div');
                 
                 cardAlunosAcimaDaMedia.className  = 'd-flex flex-column green-glow border-color-white text-white bf-filter-5px bf-brightness-3 rounded-4 p-4 font-family-oswald overflow-auto w-fit';
@@ -51,10 +64,18 @@ if (relatoriosAlunos) {
             
                 if (relatoriosAlunosAcimaMedia)
                     relatoriosAlunosAcimaMedia.appendChild(cardAlunosAcimaDaMedia);                                    
-            
-            } else {
+                
+                textoPorcentagem_AM.innerHTML = (totalAlunosAcimaMedia === 1)
+                    ? `Representa ${porcentagemAlunosAcimaMedia.toFixed(1)}% do total de alunos`
+                    : `Representam ${porcentagemAlunosAcimaMedia.toFixed(1)}% do total de alunos`;
+                
+
+            } else if (Number(media) < 6) {
+                const textoPorcentagem_AbM = document.querySelector('#relatorios-porcentagem-alunos-AbM');
+                
                 corSituacao = 'text-light-red';
                 totalAlunosAbaixoMedia++;
+                let porcentagemAlunosAbaixoMedia = (totalAlunosAbaixoMedia / maxAlunos) * 100;
                 
                 const cardAlunosAbaixoDaMedia = document.createElement('div');
                 
@@ -64,7 +85,32 @@ if (relatoriosAlunos) {
                     <span class='${corSituacao}'>Média: ${Number(media).toFixed(1)} </span>`;
 
                 if (relatoriosAlunosAbaixoMedia) 
-                    relatoriosAlunosAbaixoMedia.appendChild(cardAlunosAbaixoDaMedia);      
+                    relatoriosAlunosAbaixoMedia.appendChild(cardAlunosAbaixoDaMedia);   
+                
+                textoPorcentagem_AbM.innerHTML = (totalAlunosAbaixoMedia === 1)
+                    ? `Representa ${porcentagemAlunosAbaixoMedia.toFixed(1)}% do total de alunos`
+                    : `Representam ${porcentagemAlunosAbaixoMedia.toFixed(1)}% do total de alunos`;
+                                    
+            } else {
+                const textoPorcentagem_DM = document.querySelector('#relatorios-porcentagem-alunos-DM');
+                
+                corSituacao = 'text-light-yellow';
+                totalAlunosDentroMedia++;
+                let porcentagemAlunosDentroMedia = (totalAlunosDentroMedia / maxAlunos) * 100;
+                
+                const cardAlunosDentroDaMedia = document.createElement('div');
+
+                cardAlunosDentroDaMedia.className = 'd-flex flex-column yellow-glow border-color-white text-white bf-filter-5px bf-brightness-3 rounded-4 p-4 font-family-oswald overflow-auto w-fit';
+                cardAlunosDentroDaMedia.innerHTML = `
+                    <strong>${nome}</strong>
+                    <span class='${corSituacao}'>Média: ${Number(media).toFixed(1)} </span>`;
+                
+                if (relatoriosAlunosDentroMedia)
+                    relatoriosAlunosDentroMedia.appendChild(cardAlunosDentroDaMedia);
+                
+                textoPorcentagem_DM.innerHTML = (totalAlunosAbaixoMedia === 1)
+                    ? `Representa ${porcentagemAlunosDentroMedia.toFixed(1)}% do total de alunos`
+                    : `Representam ${porcentagemAlunosDentroMedia.toFixed(1)}% do total de alunos`;
             }
         });
 
@@ -73,6 +119,9 @@ if (relatoriosAlunos) {
             
         if (relatoriosQtdeAlunosAbaixoMedia) relatoriosQtdeAlunosAbaixoMedia.innerHTML = `
             <h1>${totalAlunosAbaixoMedia} alunos</h1>`;
+        
+        if(relatorioQtdeAlunosDentroMedia) relatorioQtdeAlunosDentroMedia.innerHTML = `
+            <h1>${totalAlunosDentroMedia} alunos</h1>`;
         
     } else {
         relatoriosAlunos.innerHTML = '<div class="ms-2 text-white">Nenhum aluno cadastrado ainda.</div>';
