@@ -3,6 +3,7 @@ const inputPrimeiraNotaAluno = document.querySelector('#input-primeira-nota-alun
 const inputSegundaNotaAluno  = document.querySelector('#input-segunda-nota-aluno');
 const btnConfirmar           = document.querySelector('#btn-confirmar');
 const btnRelatorio           = document.querySelector("#btn-ir-para-relatorio");
+const btnLimparRegistros     = document.querySelector('#btn-limpar-registros');
 const cadastroInputs         = document.querySelectorAll("input.form-control");
 const linkPagRelatorio       = './PagRelatorio/relatorio.html';
 const maxAlunos = 5;
@@ -17,6 +18,7 @@ if (dadosSalvos) {  // se tem dado salvo...
     // coloca os dados recuperados no map original
     alunos = (Array.isArray(alunosArray))? new Map(alunosArray) : new Map(); 
     btnRelatorio.disabled = false;
+    btnLimparRegistros.disabled = false;
 }
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -60,14 +62,12 @@ btnConfirmar.addEventListener('click', async function() {
         // guarda os alunos no localStorage em formato de string pra n perder os dados
         // dps transforma o map em array usando o Array.from(alunos.entries()) pro JSON aceitar
         localStorage.setItem('cadastroAlunos', JSON.stringify(Array.from(alunos.entries()))); 
-        
-        btnRelatorio.disabled = false;
             
         inputNomeAluno.value         = "";
         inputPrimeiraNotaAluno.value = "";
         inputSegundaNotaAluno.value  = "";
-
     } else {
+
         alert("Máximo de alunos atingido! (Max. 5)");
         cadastroInputs.forEach(c => shakeErrorAnimation(c) );
         inputNomeAluno.value         = "";
@@ -77,6 +77,11 @@ btnConfirmar.addEventListener('click', async function() {
 });
 
 btnRelatorio.addEventListener("click", function() { window.location.href = linkPagRelatorio; });
+btnLimparRegistros.addEventListener("click", function() { 
+    localStorage.removeItem('cadastroAlunos');
+    alunos = {};
+    window.location.reload();
+});
 inputNomeAluno.addEventListener('keypress', function(event) {
     // Se a tecla pressionada for um número, cancela o evento de digitação
     if (/[0-9]/.test(event.key)) {
