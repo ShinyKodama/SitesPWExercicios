@@ -1,22 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../styles/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../../styles/index.css">
     <title>L.B. & E.W. | Fibonacci</title>
 </head>
+
 <body>
+
     <div class="d-flex bg-dark text-light-purple border-color-white font-family-weghorst m-4 p-3 rounded-pill align-items-center
         justify-content-between">
-        <h1 class="ps-4">Fibonacci </h1>
-        
+        <h1 class="ps-4"> Fibonacci </h1>
+        <span class="fs-3 text-white"> Clique na imagem </span>
         <button class="btn btn-outline-purple font-family-oswald me-5 fs-4 rounded-pill p-3 
-            position-relative"> Ver Sequência </button>
+            position-relative" onclick="
+                window.location.href='../fibonacci_calculation_page/fibonacci_calculation_page.html'
+            "> Ver Sequência
+        </button>
     </div>
 
+    <div class="d-flex p-5 text-white flex-wrap justify-content-start align-items-start">
+        <div class='d-flex flex-column rounded-5 border-color-black shadow w-fit' id='imagem-fibonacci'>
+            <img src="../../Images/Fibonacci.webp"
+                alt="Ilustração em gravura de Leonardo Fibonacci usando um capuz medieval" class="rounded-5"
+                style="min-width: 25%;">
+        </div>
+        <div class="flex-grow-1 ps-5 text-start" style="max-width: 70%;" id="texto-descricao-fibonacci">
+            <p class="font-family-oswald fs-4 m-0">
+                <span class="font-family-weghorst fw-bold text-uppercase"> — Quem é Fibonacci? — </span>
+                Nascido na Itália, Leonardo de Pisa,
+                popularmente conhecido como Fibonacci, foi o matemático ocidental mais talentoso de sua era. Filho de um
+                funcionário público e comerciante, ele viajou bastante pelas regiões do Mediterrâneo, onde teve contato
+                direto com os avançados métodos aritméticos do mundo islâmico. Em 1202, Fibonacci publicou a obra de sua
+                vida, o livro Liber Abaci (O Livro do Cálculo). Nesta publicação, além de ensinar os europeus a usarem
+                os
+                algarismos arábicos atuais e o conceito do número zero, ele apresentou uma sequência numérica que
+                descrevia
+                o crescimento teórico de uma população de coelhos. Essa sucessão de números revelou-se um padrão
+                essencial
+                na biologia, na arte e no design, intimamente ligado à Proporção Áurea e à geometria das formas na
+                natureza.
+            </p>
+        </div>
+    </div>
+    <div class="container text-white my-5 py-5">
+        <h2 class="font-family-weghorst text-center mb-5 fs-1">A Sequência no Mundo Real</h2>
+        <!-- Linha dos cards -->
+        <div class="row g-4 justify-content-center">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="bg-dark p-4 rounded-5 purple-glow h-100 border-color-purple">
+                    <h3 class="font-family-weghorst fs-3 mb-3 text-light-purple">Perfeição Marinha</h3>
+                    <p class="font-family-oswald fs-5 text-white-50">
+                        A concha do molusco Nautilus é um dos exemplos mais célebres da Proporção Áurea na biologia. Cada nova câmara que o animal constrói para viver segue rigorosamente os fatores de crescimento da sequência, expandindo seu tamanho sem alterar sua forma original.
+                    </p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="bg-dark p-4 rounded-5 purple-glow h-100 border-color-purple">
+                    <h3 class="font-family-weghorst fs-3 mb-3 text-light-purple">Engenharia das Plantas</h3>
+                    <p class="font-family-oswald fs-5 text-white-50">
+                        O miolo de um girassol organiza suas sementes em espirais cruzadas que correm em direções opostas. Se você contar essas espirais, quase sempre encontrará números vizinhos da sequência de Fibonacci, como 34 e 55. Isso otimiza o espaço.
+                    </p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="bg-dark p-4 rounded-5 purple-glow h-100 border-color-purple">
+                    <h3 class="font-family-weghorst fs-3 mb-3 text-light-purple">Proporções Cósmicas</h3>
+                    <p class="font-family-oswald fs-5 text-white-50">
+                        Até mesmo a estrutura de galáxias espirais se alinha perfeitamente com os retângulos de ouro baseados nos cálculos de Fibonacci. O design que governa uma pequena planta na Terra é exatamente o mesmo que organiza bilhões de estrelas no universo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../../scripts/js/bootstrap.bundle.min.js"></script>
     <script src="../../scripts/index.js"></script>
 </body>
+
 </html>

@@ -3,14 +3,14 @@ body {
     overflow-y: auto;
     background: linear-gradient(
         -45deg,
-        #7326d7,
-        #b25fff,
-        #aa42ff,
-        #d261ff,
-        #c13cff,
-        #ca4ce9
+        #d72638,
+        #ff5f6d,
+        #ff8c42,
+        #ffbd61,
+        #ff7a3c,
+        #e94c4c
     );
-    background-size: 600% 10%;
+    background-size: 600% 600%;
     animation: animBackground 10s linear infinite !important;
     scroll-behavior: smooth;
 }
@@ -53,7 +53,8 @@ body {
 .border-color-blue   { border:#78b3ff 2px solid; }
 .border-color-red    { border:#ff2f2f 2px solid; }
 .border-color-white  { border:#f5f5f5 2px solid; }
-.border-color-purple { border:#c074ff 2px solid;}
+.border-color-purple { border:#c074ff 2px solid; }
+.border-color-black  { border: #222222 2px solid;}
 .form-control        { transition: all 0.3s ease-in-out !important; }
 .btn                 { transition: all 0.3s ease !important; }
 .btn-outline-purple  { border-color: #b25fff; color: #b25fff; }
@@ -67,7 +68,8 @@ body {
 .green-glow          { box-shadow: 0 0 1rem 0.02rem rgba(84, 255, 84, 0.8); }
 .white-glow          { box-shadow: 0 0 1rem 0.02rem rgba(255, 255, 255, 0.8); }
 .yellow-glow         { box-shadow: 0 0 1rem 0.02rem rgba(255, 215, 84, 0.8); }
-.bf-blur-5px         { backdrop-filter: 5px; }
+.purple-glow         { box-shadow: 0 0 1rem 0.02rem rgba(121, 84, 255, 0.8); }
+.bf-blur-5px         { backdrop-filter: blur(5px); }
 .bf-brightness-1     { backdrop-filter: brightness(1.2); }
 .bf-brightness-2     { backdrop-filter: brightness(0.9); }
 .bf-brightness-3     { backdrop-filter: brightness(0.5); }
