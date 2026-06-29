@@ -42,7 +42,6 @@ btnConfirmar.addEventListener('click', async function() {
         return;
 
     } else if (n1 > 10 || n2 > 10 || n1 < 0 || n2 < 0) {
-        
         inputPrimeiraNotaAluno.value = (n1 > 10 || n1 < 0) ? '' : n1; 
         inputSegundaNotaAluno.value  = (n2 > 10 || n1 < 0) ? '' : n2;   
 
@@ -52,9 +51,11 @@ btnConfirmar.addEventListener('click', async function() {
 
         inputPrimeiraNotaAluno.focus();
         return;
+        
     } else {
         cadastroInputs.forEach(c => shakeValidAnimation(c));
         await sleep(350);
+        window.location.reload();
     }
 
     if (alunos.size < maxAlunos) {
