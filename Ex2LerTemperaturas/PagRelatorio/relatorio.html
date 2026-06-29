@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="relatorio.css">
+    <title>Página de Relatórios</title>
+</head>
+
+<body class="overflow-y-auto overflow-x-hidden">
+     <header>
+        <div class="d-flex flex-column vw-50 position-relative align-items-center justify-content-between mb-5">
+            <h2 class="text-white mx-auto font-family-weghorst display-4
+                bf-blur-5px shadow px-5 m-2 rounded-pill bf-brightness-1"> — Relatório dos alunos — </h1>
+            <button class="btn btn-outline-light mx-auto font-family-oswald fs-2 
+                rounded-4 px-5 bf-brightness-2 mt-4"
+                onclick="window.location.href='../index.HTML'"> Voltar </button>
+        </div>
+    </header>
+    
+    <div class="d-flex flex-wrap justify-content-start align-items-stretch gap-4 w-100 px-4" id="relatorios-alunos">
+        <div class="d-flex shadow-lg text-light-blue bf-filter-5px bf-brightness-1 rounded-4 p-2 fs-2
+            font-family-oswald overflow-auto w-fit">
+        </div>     
+    </div>
+
+    <script src=" ../js/bootstrap.bundle.min.js"></script>
+    <script src="relatorio.js"></script>
+</body>
+
+</html>

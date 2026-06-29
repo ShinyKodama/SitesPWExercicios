@@ -1,0 +1,14 @@
+@import url(../style.css);
+body {
+    background: linear-gradient(
+       -45deg,
+        #2679d7,
+        #5fa4ff,
+        #429aff,
+        #96d5ff,
+        #2b95db,
+        #4c9de9
+    );
+    background-size: 600% 600%;
+    animation: animBackground 15s linear infinite !important;
+}

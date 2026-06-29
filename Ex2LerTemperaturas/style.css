@@ -9,7 +9,7 @@ body {
         #e94c4c
     );
     background-size: 600% 600%;
-    animation: animBackground 8s linear infinite;
+    animation: animBackground 8s linear infinite !important;
 }
 
 @font-face { font-family: 'Happy Chunk';   src: url('Fonts/happy_chunk/HappyChunk.ttf')             format('truetype'); }
@@ -24,7 +24,7 @@ body {
 .font-family-magics-flavor { font-family: 'Magics Flavor'; }
 .font-family-weghorst      { font-family: 'WegHorst'; }
 .font-family-scope-one     { font-family: 'Scope One'; }
-.font-family-oswald        { font-family: 'Oswald'; }
+.font-family-oswald        { font-family: 'Oswald'; letter-spacing: 1px;}
 .font-family-fragment-mono { font-family: 'Fragment Mono'; }
 /*==========================*/
 
@@ -36,10 +36,14 @@ body {
 .border-color-blue   { border:#78b3ff 2px solid; }
 .border-color-red    { border:#ff2f2f 2px solid; }
 .form-control        { transition: all 0.3s ease-in-out !important; }
-.btn-outline-warning { transition: all 0.3s ease !important; }
-.btn-outline-danger  { transition: all 0.3s ease !important; }
+.btn                 { transition: all 0.3s ease !important; }
 .bg-dark-gray        { background-color: #222222; }
 .shadow              { box-shadow: 0 0 1rem 0.02rem rgb(34, 34, 34, 0.8) !important; }
+.bf-blur-5px         { backdrop-filter: 5px; }
+.bf-brightness-1     { backdrop-filter: brightness(1.2); }
+.bf-brightness-2     { backdrop-filter: brightness(0.9); }
+.text-light-blue     { color: #cae4ff; }
+.text-dark-blue      { color: #377dff}
 /*==========================*/
 
 /* Eventos */
@@ -49,24 +53,19 @@ body {
     border-color: #ffedcb !important;
 }
 .form-control:hover { box-shadow: 0px 0px 15px 2px #ffd88f;  outline: none; border-color: #ffedcb; }
-.btn-outline-warning:hover, .btn-outline-warning:focus { 
-    border:#fffffe 1px solid; 
-    color: #2b2b2b; 
-    background-color: #ffe9c0; 
-    box-shadow: 0px 0px 10px 5px #ffbb3d;
-}
-.btn-outline-danger:hover, .btn-outline-danger:focus {
-    border:#fffefe 1px solid; 
-    color: #2b2b2b; 
-    background-color: #ffc0c0; 
-    box-shadow: 0px 0px 10px 5px #ff3d3d;
-}
+.btn:hover, .btn:focus { border:#fffffe 1px solid; color: #2b2b2b; }
+.btn-outline-warning:hover,   .btn-outline-warning:focus   { background-color: #ffe9c0; box-shadow: 0px 0px 10px 5px #ffbb3d; }
+.btn-outline-danger:hover,    .btn-outline-danger:focus    { background-color: #ffc0c0; box-shadow: 0px 0px 10px 5px #ff3d3d; }
+.btn-outline-primary:hover,   .btn-outline-primary:focus   { background-color: #c0ccff; box-shadow: 0px 0px 10px 5px #3d8bff; }
+.btn-outline-light:hover,     .btn-outline-light:focus     { background-color: #ecefff; box-shadow: 0px 0px 10px 5px #ecf4ff; }
+.btn-outline-success:hover,   .btn-outline-success:focus   { background-color: #c0ffd5; box-shadow: 0px 0px 10px 5px #3dff94; }
+.btn-outline-secondary:hover, .btn-outline-secondary:focus { background-color: #e4e4e6; box-shadow: 0px 0px 10px 5px #c1c1c2; }
 /*==========================*/
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 
 /* Animações (keyframes) */
-@keyframes animBackground{
+@keyframes animBackground {
     0%  { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100%{ background-position: 0% 50%; }
