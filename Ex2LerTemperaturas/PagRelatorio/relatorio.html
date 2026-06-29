@@ -13,10 +13,16 @@
     <header>
         <div class="d-flex flex-column vw-50 position-relative align-items-center justify-content-between mb-5">
             <h2 class="text-white mx-auto font-family-weghorst display-4
-                bf-blur-5px shadow px-5 m-2 rounded-pill bf-brightness-1"> — Relatório dos alunos — </h2>
+                bf-blur-5px shadow px-5 m-2 rounded-pill bf-brightness-1 text-center"> — Relatório dos alunos — </h2>
             <button class="btn btn-outline-light mx-auto font-family-oswald fs-2 
                 rounded-4 px-5 bf-brightness-2 mt-4" onclick="window.location.href='../index.HTML'"> Voltar </button>
-             <h2 class="text-white mx-auto font-family-weghorst display-5
+            
+            <!-- Média total da sala -->
+            <div class="d-flex flex-column bg-dark-gray mt-5 border-color-white text-white p-5 fs-3 font-family-weghorst rounded-5 text-center"
+                id="relatorios-media-sala"> 
+            </div>
+
+            <h2 class="text-white mx-auto font-family-weghorst display-5
                 bf-blur-5px shadow px-5 mt-5 rounded-pill bf-brightness-1"> — Alunos Registrados — </h2>
         </div>
     </header>
@@ -26,11 +32,20 @@
             font-family-oswald overflow-auto w-fit">
         </div>
     </div>
-    
+
+    <!-- Porcentagem de Alunos Aprovados -->
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <h2 class="text-white mx-auto font-family-weghorst display-4
+            bf-blur-5px shadow px-5 mt-10 rounded-pill bf-brightness-1 text-center w-fit"> 
+            —  Alunos aprovados (%) — </h2> 
+        <div class="d-flex bg-dark text-white text-center w-fit mt-5 p-4 font-family-oswald display-6 rounded-4" 
+            id="relatorios-alunos-aprovados">
+        </div>
+    </div>
     <!-- Alunos Acima da média -->
     <div class="d-flex flex-column justify-content-center align-items-center my-20 mb-5">
         <h2 class="text-light-green mx-auto font-family-weghorst display-5
-            bg-dark-green green-glow px-5 m-5 rounded-pill bf-brightness-1">
+            bg-dark-green green-glow px-5 m-5 rounded-pill bf-brightness-1 text-center">
             — Alunos <span class="text-success">acima</span> da média — </h1>
         <div class="d-flex bf-brightness-3 bf-blur-5px w-fit px-5 py-2 
             rounded-4 font-family-oswald mb-5 white-glow text-white" 
@@ -41,13 +56,13 @@
             <div class="d-flex flex-column shadow-lg text-white bf-filter-5px bf-brightness-1 rounded-4 p-4
                 font-family-oswald overflow-auto w-fit"></div>
         </div>        
-        <h6 class="mt-3 text-light-green" id="relatorios-porcentagem-alunos-AM"> Representam 2% do total de alunos </h6>
+        <h6 class="mt-3 text-light-green" id="relatorios-porcentagem-alunos-AM"> Representam 0% do total de alunos registrados </h6>
     </div>
     
     <!-- Alunos dentro da média -->
     <div class="d-flex flex-column justify-content-center align-items-center my-20 mb-5">
         <h2 class="text-light-yellow mx-auto my-5 font-family-weghorst display-5
-            bg-dark-yellow yellow-glow px-5 my-10 rounded-pill bf-brightness-1">
+            bg-dark-yellow yellow-glow px-5 my-10 rounded-pill bf-brightness-1 text-center">
             — Alunos <span class="text-warning">dentro</span> da média — </h1>
             <div class="d-flex bf-brightness-3 bf-blur-5px w-fit px-5 py-2 
                 rounded-4 font-family-oswald mb-5 white-glow text-white" 
@@ -57,13 +72,13 @@
             <div class="d-flex flex-column shadow-lg text-white bf-filter-5px bf-brightness-1 rounded-4 p-4
                 font-family-oswald overflow-auto w-fit"></div>
         </div>
-        <h6 class="mt-3 text-light-yellow" id="relatorios-porcentagem-alunos-DM"> Representam 2% do total de alunos </h6>
+        <h6 class="mt-3 text-light-yellow" id="relatorios-porcentagem-alunos-DM"> Representam 0% do total de alunos registrados</h6>
     </div>
 
     <!-- Alunos Abaixo da média -->
     <div class="d-flex flex-column justify-content-center align-items-center my-20 mb-5">
         <h2 class="text-light-red mx-auto my-5 font-family-weghorst display-5
-            bg-dark-red red-glow px-5 my-10 rounded-pill bf-brightness-1">
+            bg-dark-red red-glow px-5 my-10 rounded-pill bf-brightness-1 text-center">
             — Alunos <span class="text-danger">abaixo</span> da média — </h1>
             <div class="d-flex bf-brightness-3 bf-blur-5px w-fit px-5 py-2 
                 rounded-4 font-family-oswald mb-5 white-glow text-white" 
@@ -73,7 +88,7 @@
             <div class="d-flex flex-column shadow-lg text-white bf-filter-5px bf-brightness-1 rounded-4 p-4
                 font-family-oswald overflow-auto w-fit"></div>
         </div>
-        <h6 class="mt-3 text-light-red" id="relatorios-porcentagem-alunos-AbM"> Representam 2% do total de alunos </h6>
+        <h6 class="mt-3 text-light-red" id="relatorios-porcentagem-alunos-AbM"> Representam 0% do total de alunos registrados </h6>
     </div>
 
 

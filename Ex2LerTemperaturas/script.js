@@ -5,7 +5,7 @@ const btnConfirmar           = document.querySelector('#btn-confirmar');
 const btnRelatorio           = document.querySelector("#btn-ir-para-relatorio");
 const cadastroInputs         = document.querySelectorAll("input.form-control");
 const linkPagRelatorio       = './PagRelatorio/relatorio.html';
-const maxAlunos              = 5;
+const maxAlunos = 5;
 
 let alunos = new Map(); // separa cada aluno por chave e valor (map)
 // recupera os dados, se n tiver nada, retorna um mapa vazio
