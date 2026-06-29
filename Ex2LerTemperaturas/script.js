@@ -38,7 +38,8 @@ btnConfirmar.addEventListener('click', async function() {
         await sleep(350);
         alert("Preencha todos os campos!");
         return;
-    } else if (n1 > 10 || n2 > 10 || n1 < 0 || n2 < 0 ) {
+
+    } else if (n1 > 10 || n2 > 10 || n1 < 0 || n2 < 0) {
         
         inputPrimeiraNotaAluno.value = (n1 > 10 || n1 < 0) ? '' : n1; 
         inputSegundaNotaAluno.value  = (n2 > 10 || n1 < 0) ? '' : n2;   
@@ -50,9 +51,8 @@ btnConfirmar.addEventListener('click', async function() {
         inputPrimeiraNotaAluno.focus();
         return;
     } else {
-        cadastroInputs.forEach(c => shakeValidAnimation(c) );
+        cadastroInputs.forEach(c => shakeValidAnimation(c));
         await sleep(350);
-        alert("Cadastro realizado com sucesso!");
     }
 
     if (alunos.size < maxAlunos) {
@@ -69,6 +69,7 @@ btnConfirmar.addEventListener('click', async function() {
 
     } else {
         alert("Máximo de alunos atingido! (Max. 5)");
+        cadastroInputs.forEach(c => shakeErrorAnimation(c) );
         inputNomeAluno.value         = "";
         inputPrimeiraNotaAluno.value = "";
         inputSegundaNotaAluno.value  = "";

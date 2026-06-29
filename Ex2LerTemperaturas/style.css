@@ -31,17 +31,21 @@ body {
 /* Classes utilitárias */
 .g-20px { gap: 20px; }
 .w-fit  { width: fit-content; }
+
 .border-color-orange { border:#ffa978 2px solid; }
 .border-color-yellow { border:#ffa600 2px solid; }
 .border-color-blue   { border:#78b3ff 2px solid; }
 .border-color-red    { border:#ff2f2f 2px solid; }
+.border-color-white  { border:#f5f5f5 2px solid; }
 .form-control        { transition: all 0.3s ease-in-out !important; }
 .btn                 { transition: all 0.3s ease !important; }
 .bg-dark-gray        { background-color: #222222; }
+.bg-dark-blue        { background-color: #1a2e4b; }
 .shadow              { box-shadow: 0 0 1rem 0.02rem rgb(34, 34, 34, 0.8) !important; }
 .bf-blur-5px         { backdrop-filter: 5px; }
 .bf-brightness-1     { backdrop-filter: brightness(1.2); }
 .bf-brightness-2     { backdrop-filter: brightness(0.9); }
+.bf-brightness-3     { backdrop-filter: brightness(0.5); }
 .text-light-blue     { color: #cae4ff; }
 .text-dark-blue      { color: #377dff}
 /*==========================*/
@@ -66,8 +70,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-app
 
 /* Animações (keyframes) */
 @keyframes animBackground {
-    0%  { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100%{ background-position: 0% 50%; }
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 /*==========================*/
