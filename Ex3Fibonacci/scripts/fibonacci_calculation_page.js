@@ -1,13 +1,30 @@
+const btnConfirmar = document.querySelector('#btn-confirmar');
 let limitante_sequencia = document.querySelector('#input-limitante-sequencia');
 let resultado = document.querySelector('#resultado');
 
-let limitante = limitante_sequencia.valueAsNumber;
+btnConfirmar.addEventListener('click', function () {
+    let limitante = limitante_sequencia.valueAsNumber;
+    
+    if (isNaN(limitante)) {
+        resultado.innerHTML = "Digite um número válido!";
+        return;
+    }
 
-let numeros = [0, 1];
+    if (limitante <= 0) {
+        resultado.innerHTML = "";
+        return;
+    }
 
-for (let i = 2; i < limitante; i++) { 
-    let proxNum = numeros[i - 1] + (numeros[i - 2]); 
-    numeros.push(proxNum); 
-}
+    if (limitante === 1) {
+        resultado.innerHTML = "0";
+        return;
+    }
 
-resultado.innerHTML = numeros.join(' ');
+    let numeros = [0, 1];
+
+    for (let i = 2; i < limitante; i++) {
+        numeros.push(numeros[i - 1] + numeros[i - 2]);
+    }
+
+    resultado.innerHTML = numeros.join(' ');
+});
