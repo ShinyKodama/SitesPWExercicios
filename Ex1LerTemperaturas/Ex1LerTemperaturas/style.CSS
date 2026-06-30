@@ -1,0 +1,92 @@
+/* Aqui eu tô criando minhas "próprias" classes q n tem no bootstrap */
+/* Ou q tem, mas n na medida q eu quero :/ */
+html {
+    scroll-behavior: smooth
+}
+body {
+    background-image: linear-gradient(to bottom, #313438 20%, #a7cdf8);
+    background-attachment: fixed;
+}
+
+.screen-lg-scale {
+    transform: scale(1.25); 
+    transform-origin: center center; /* cresce pra todos os lados (tanto X quanto Y)*/
+    filter: blur(0);   /* Força a renderização dos textos do site, e de todos os itens q estão nele no geral */
+}
+
+#inputBox{
+    --bs-box-shadow: 0 0.2rem 1rem 0.1rem #abcdff;
+    border: #cae4ff 1px solid
+}
+
+#resultsBox {
+    --bs-box-shadow: 0 0.15rem 0.5rem 0.01rem #c0d9ff;
+}
+.border-half-y-rounded-2 {
+    border-radius: 20px 20px 0px 0px;
+}
+
+.w-fit {
+    width: fit-content !important;
+}
+
+.g-20 {
+    gap: 20px !important;
+}
+
+.bg-dark-gray {
+    background-color: #313438 !important;
+}
+
+.text-light-blue {
+    color: #cae4ff;
+}
+
+.focus-ring-dark {
+    transition: all 0.4s ease;
+}
+
+.focus-ring-dark:focus{
+    border-color: #cae4ff !important; 
+    box-shadow: 0 0 10px 1px rgba(79, 167, 255, 1) !important; 
+    background-color: #313438 !important;
+    color: #cae4ff !important;
+}
+
+.focus-ring-dark:focus::placeholder {   /* mexe no placeholder do input */
+    color: #cae4ff !important;
+    opacity: 1;
+}
+
+.btn-outline-primary { /* botão de confirmar */
+    border-color:#8bc3ff !important;
+    color: #8bc3ff !important;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-danger {   /* botão de relatório */
+    border-color:#ff8b8b !important;
+    color: #ff8b8b !important;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+    box-shadow: 0 0 10px 1px rgb(255, 79, 79) !important; 
+    border-color: #ffcaca !important;
+    color: #ffffff !important; 
+    background-color: #ff8b8b !important;
+}
+
+.btn-outline-primary:hover {
+    box-shadow: 0 0 10px 1px rgba(79, 167, 255, 1) !important; 
+    border-color: #cae4ff !important;
+    background-color: #7dbcff !important;
+    color: #ffffff !important; 
+}
+
+/* Isso aqui retira as 'setinhas' q ficam no canto direito dos input numbers*/
+input::-webkit-outer-spin-button, /* botão de cima */
+input::-webkit-inner-spin-button { /* botão de baixo */
+  -webkit-appearance: none;
+  margin: 0;
+}

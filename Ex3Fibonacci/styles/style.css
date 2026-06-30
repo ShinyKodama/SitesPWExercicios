@@ -16,7 +16,7 @@ body {
 }
 
 @font-face { font-family: 'Happy Chunk';   src: url('../Fonts/happy_chunk/HappyChunk.ttf')             format('truetype'); }
-@font-face { font-family: 'Magics Flavor'; src: url('../Fonts/magics_flavor/Magics\ Flavor.ttf')    format('truetype'); }
+@font-face { font-family: 'Magics Flavor'; src: url('../Fonts/magics_flavor/Magics\ Flavor.ttf')       format('truetype'); }
 @font-face { font-family: 'WegHorst';      src: url('../Fonts/weghorst/Weghorst.otf')                  format('truetype'); }
 @font-face { font-family: 'Scope One';     src: url('../Fonts/Scope_One/ScopeOne-Regular.ttf')         format('truetype'); }
 @font-face { font-family: 'Oswald';        src: url('../Fonts/Oswald/Oswald-VariableFont_wght.ttf')    format('truetype'); }
@@ -54,8 +54,8 @@ body {
 .border-color-red    { border:#ff2f2f 2px solid; }
 .border-color-white  { border:#f5f5f5 2px solid; }
 .border-color-purple { border:#c074ff 2px solid; }
-.border-color-black  { border: #222222 2px solid;}
-.form-control        { transition: all 0.3s ease-in-out !important; }
+.border-color-black  { border:#222222 2px solid; }
+.form-control        { transition: all 0.5s ease !important; }
 .btn                 { transition: all 0.3s ease !important; }
 .btn-outline-purple  { border-color: #b25fff; color: #b25fff; }
 .bg-dark-gray        { background-color: #222222; }
@@ -84,12 +84,6 @@ body {
 /*==========================*/
 
 /* Eventos */
-.form-control:focus { 
-    box-shadow: 0px 0px 10px 5px #ffc14f !important; 
-    outline: none !important; 
-    border-color: #ffedcb !important;
-}
-.form-control:hover { box-shadow: 0px 0px 15px 2px #ffd88f;  outline: none; border-color: #ffedcb; }
 .btn:hover, .btn:focus { border:#fffffe 1px solid; color: #2b2b2b; }
 .btn-outline-purple:hover,    .btn-outline-purple:focus    { background-color: #e6c0ff; box-shadow: 0px 0px 10px 5px #c23dff;}
 .btn-outline-warning:hover,   .btn-outline-warning:focus   { background-color: #ffe9c0; box-shadow: 0px 0px 10px 5px #ffbb3d; }

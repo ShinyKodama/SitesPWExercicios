@@ -1,11 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../../styles/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../../styles/fibonacci_calculation_page.css">
+    <title>Cálculo Fibonacci</title>
 </head>
-<body>
-    <button class="btn" onclick="window.location.href = '../main_page/index.html'"> Voltar </button>
+<body class="overflow-x-hidden overflow-y-auto">
+     <div class="d-flex flex-column w-fit justify-content-center align-items-center 
+        vh-100 w-100 text-white">
+        <button class="btn btn-outline-light fs-2 font-family-weghorst rounded-0 rounded-top-5 px-5 bg-dark-gray"  
+            onclick = 'window.location.href ="../main_page/index.html"'>
+            Voltar </button>
+        <div class="d-flex flex-column align-items-center justify-content-center p-5 
+            g-20px rounded-5 purple-glow position-relative border-color-white bg-dark-gray font-family-oswald">
+            <input type="text" class="form-control fs-2 rounded-pill border-color-purple"     
+                id="input-limitante-sequencia"          
+                placeholder="Limitante da sequência">
+            <button class="btn btn-outline-purple fs-2 font-family-weghorst 
+                rounded-pill px-5 bg-dark-gray" id="btn-confirmar"> Confirmar </button>       
+        </div>
+    </div>
+    <h1 id="resultado"> O resultado Aparecerá aqui </h1>
+    <script src="../../scripts/js/bootstrap.bundle.min.js"></script>
+    <script src="../../scripts/fibonacci_calculation_page.js"></script>
 </body>
 </html>

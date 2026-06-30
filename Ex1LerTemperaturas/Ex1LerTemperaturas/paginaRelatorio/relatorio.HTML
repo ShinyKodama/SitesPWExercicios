@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../style.CSS">
+
+    <title>Página de Relatório</title>
+</head>
+
+<body>
+    <header>
+        <div class="d-flex vw-50 position-relative bg-dark align-items-center justify-content-between">
+            <button class="btn btn-outline-primary bg-dark-gray m-2 px-5"
+                onclick="window.location.href='../index.HTML'"> Voltar </button>
+            <h2 class="text-light-blue me-4"> Relatório das Temperaturas </h1>
+        </div>
+    </header>
+
+    <h1 class="text-light-blue position-relative text-center 
+        my-2 mb-4"> — Temperaturas registradas — </h3>
+        <div class="d-flex position-relative bg-dark-gray align-items-center
+            justify-content-evenly mt-3 p-2 shadow overflow-x-auto overflow-y-hidden g-20" id="resultsBox">
+            <div class="w-fit p-1 d-flex vh-50 bg-dark position-relative align-items-center 
+                text-light-blue fs-2 rounded-4 flex-shrink-0"></div>
+        </div>
+
+        <h1 class="text-light-blue position-relative text-center 
+            my-3 mb-4 reveal-title"> — Maior Temperatura Registrada — </h1>
+        
+        <div class="d-flex bg-dark w-fit text-light-blue p-3 ms-auto me-auto rounded-4">
+            <h1 class="display-1 px-5" id="resultsHighestTemp"></h1>
+        </div>
+
+        <h1 class="text-light-blue position-relative text-center 
+            my-5 mb-4 reveal-title"> — Menor Temperatura Registrada — </h1>
+        
+        <div class="d-flex bg-dark w-fit text-light-blue p-3 ms-auto me-auto rounded-4 reveal-card">
+            <h1 class="display-6 px-5" id="resultsLowestTemp"></h1>
+        </div>
+        
+        <h1 class="text-light-blue position-relative text-center 
+            my-5 mb-4 reveal-title"> — Média de todas as temperaturas — </h1>
+        
+        <div class="d-flex bg-dark w-fit text-light-blue p-3 ms-auto me-auto rounded-4 reveal-card mb-5">
+            <h1 class="display-6 px-5" id="resultsAverageTemp"></h1>
+        </div>
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="relatorio.JS"></script>
+</body>
+
+</html>
